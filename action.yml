@@ -18,7 +18,7 @@ outputs:
   created: # output will be available to future steps 
     description: 'The created issue'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'activity'
