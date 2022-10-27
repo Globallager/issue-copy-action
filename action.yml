@@ -1,5 +1,5 @@
-name: 'Github Issue Copier'
-description: 'Copy an issue to another repository'
+name: 'Copy Issue to Repo'
+description: 'Copy an issue to another repository. Updated by @supdegrave to work with Node 16.'
 author: 'Soichi Sumi'
 inputs:
   githubToken:
