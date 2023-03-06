@@ -33,7 +33,7 @@ const getIssueCommentFromContext = () => {
     const comment = github.context.payload.comment;
     if (!comment) {
         const pr_body = github.context.payload.pull_request.body;
-            if (!pr) {
+            if (!pr_body) {
                 throw new Error("No issue comment provided / pr body found");
             }
         return pr_body;
