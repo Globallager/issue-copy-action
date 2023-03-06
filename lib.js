@@ -4,6 +4,10 @@ const github = require('@actions/github');
 const getIssueNumber = () => {
     const issue = github.context.payload.issue;
     if (!issue) {
+        const pr = github.context.payload.pull_request;
+        if (!pr) {
+            throw new Error("No pr provided");
+        }
         throw new Error("No issue provided");
     }
     return issue.number;
@@ -28,7 +32,7 @@ module.exports.getIssueFromContext = getIssueFromContext;
 const getIssueCommentFromContext = () => {
     const comment = github.context.payload.comment;
     if (!comment) {
-        throw new Error("No issue provided");
+        throw new Error("No issue comment provided");
     }
     return comment;
 } 
