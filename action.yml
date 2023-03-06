@@ -1,4 +1,4 @@
-name: 'Copy Issue to Repo'
+name: 'Copy Issue / PR to New Issue'
 description: 'Copy an issue to another repository. Updated by @supdegrave to work with Node 16.'
 author: 'Soichi Sumi'
 inputs:
