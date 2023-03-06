@@ -12035,10 +12035,9 @@ const getIssueNumber = () => {
     if (!issue) {
         const pr = github.context.payload.pull_request;
         if (!pr) {
-            throw new Error("No pr provided");
-            return pr.number;
+            throw new Error("No issue / pr provided");
         }
-        throw new Error("No issue provided");
+        return pr.number;
     }
     return issue.number;
 };
