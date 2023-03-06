@@ -32,7 +32,11 @@ module.exports.getIssueFromContext = getIssueFromContext;
 const getIssueCommentFromContext = () => {
     const comment = github.context.payload.comment;
     if (!comment) {
-        throw new Error("No issue comment provided");
+        const pr_body = github.context.payload.pull_request.body;
+            if (!pr) {
+                throw new Error("No issue comment provided / pr body found");
+            }
+        return pr_body;
     }
     return comment;
 } 
